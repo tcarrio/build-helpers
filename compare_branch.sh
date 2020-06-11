@@ -1,5 +1,5 @@
 function compare_branch() {
-    target_branch="$(git rev-parse $target_branch)";
+    target_branch="$(git rev-parse $1)";
     current_branch="$(git rev-parse HEAD)"
     if [ "$target_branch" == "$current_branch" ]
     then
