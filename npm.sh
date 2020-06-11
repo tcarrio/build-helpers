@@ -10,8 +10,8 @@ function unpublished_npm_version() {
 
     pkg_name="$(cat package.json | jq .name -r)"
     pkg_version="$(cat package.json | jq .version -r)"
-    published_version="$(npm view $pkg_name@$pkg_version --json | jq .version -r)"
-    if [ "$published_version" == "$pkg_version" ]
+    published_version="$(npm view $pkg_name@$pkg_version --json 2>/dev/null)"
+    if [ -z "$published_version" ]
     then
         return 0
     else
