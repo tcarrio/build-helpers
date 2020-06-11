@@ -3,7 +3,7 @@
 # 1 - version match
 # 2 - invalid configuration
 function unpublished_npm_version() {
-    if [ -f package.json ]
+    if [ ! -f package.json ]
     then
         return 2
     fi
