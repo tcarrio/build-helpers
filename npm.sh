@@ -2,7 +2,7 @@
 # 0 - version mismatch
 # 1 - version match
 # 2 - invalid configuration
-function npm_version_published() {
+function unpublished_npm_version() {
     if [ -f package.json ]
     then
         return 2
