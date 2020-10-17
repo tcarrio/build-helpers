@@ -1,0 +1,11 @@
+image: archlinux
+sources:
+  - https://git.sr.ht/~tcarrio/git-mirror
+  - https://git.sr.ht/~tcarrio/build-helpers
+environment:
+  PROJECT_DIR: build-helpers
+  GIT_TARGET_REPO: git@github.com:tcarrio/build-helpers.git
+secrets:
+  - 4e983fc2-9d24-43eb-9986-1c18feb2e7b8
+tasks:
+  - mirror-all: git-mirror/git-mirror.sh $PROJECT_DIR
